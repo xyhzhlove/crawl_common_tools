@@ -1,0 +1,47 @@
+
+[build-system]
+requires = ["setuptools >= 61", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "crawl_common_tools"
+requires-python = ">=3.12"
+dynamic = ["version"]
+dependencies = [
+             
+]
+
+
+[project.optional-dependencies]
+all = [
+    "requests",
+    "lxml",
+    "scrapy",
+    "selenium",
+]
+
+
+[project.scripts]
+crawl_common_tools = "crawl_common_tools.server:cmd"
+
+
+[tool.setuptools.dynamic]
+version = { attr = "crawl_common_tools.__version__" }
+
+[tool.poetry]
+name = "crawl_common_tools"
+
+
+[tool.langserve]
+export_module = "crawl_common_tools.__dev__"
+export_attr = "chain"
+
+
+[tool.pyright]
+include = ["src", "tests"]
+
+
+[tool.ruff]
+line-length = 120
+src = ["src"]

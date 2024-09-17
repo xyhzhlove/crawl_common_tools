@@ -1,0 +1,12 @@
+__pycache__
+/build/
+/dist/
+/data/
+/tmp/
+/models/
+/wheel/
+/.vscode/
+/.idea/
+/*.iml
+/dev.yaml
+*.egg-info
